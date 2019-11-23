@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		
+		<style type="text/css">
+			.disappear {display: none;}
+			.appear {display: block;}
+			#container {
+				margin: 20px auto;
+				width: 507px;
+				height: 341px;
+			}
+			#background {
+				width: 507px;
+				height: 341px;
+				position: relative;
+			}
+			#background img {
+				position: absolute;
+				top: 283px;
+			}
+			#sky {
+				background: url(img/bg_1.png);
+				position: absolute;
+				top: 0px;
+				width: 507px;
+				height: 215px;
+				-webkit-animation: bg-move 10s linear infinite;
+			}
+			
+			#tree {
+				background: url(img/bg_2.png);
+				position: absolute;
+				top: 110px;
+				width: 507px;
+				height: 231px;
+				-webkit-animation: bg-move 2s linear infinite;
+			}
+			@-webkit-keyframes bg-move{
+				from{background-position-x: 0px;}
+				to{background-position-x: -507px;}
+			}
+			#chara {
+				width: 123px;
+				height: 105px;
+				position: absolute;
+				bottom: 58px;
+				left: 170px;
+				background: url(img/1.png) no-repeat;
+				-webkit-animation: run 0.6s step-end infinite;
+			}
+			@-webkit-keyframes run{
+				from{background-image: url(img/1.png);}
+				8.3%{background-image: url(img/2.png);}
+				16.6%{background-image: url(img/3.png);}
+				24.9%{background-image: url(img/4.png);}
+				33.2%{background-image: url(img/5.png);}
+				41.5%{background-image: url(img/6.png);}
+				49.8%{background-image: url(img/7.png);}
+				58.1{background-image: url(img/8.png);}
+				66.4%{background-image: url(img/9.png);}
+				74.7%{background-image: url(img/10.png);}
+				83%{background-image: url(img/11.png);}
+				91.5%{background-image: url(img/12.png);}
+				to{background-image: url(img/1.png);}
+				
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<div id="container">
+			<div id="background">
+				<div id="sky"></div>
+				<div id="tree"></div>
+				<img src="img/bg.png"/>
+				<div id="chara"></div>
+			</div>
+			
+				
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(document).keydown()= function() {
+					console.log(this.keyCode); 
+				}
+				
+			})
+		</script>
+
+	</body>
+</html>
